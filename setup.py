@@ -31,16 +31,14 @@ setup(
     tests_require=test_deps,
     install_requires=
     [
-        'click',
-        'reentry',
-        'click_plugins',
-    ] + test_deps,
+        'click>=7.0',
+    ],
     entry_points={
         'console_scripts': [
             'demo_cli=click_demo.loader:cli',
         ],
         'click_demo_plugins': [
-            'click_demo_plugin_main=click_demo.plugin:click_demo_plugin_main',
+            'cdp=click_demo.plugin:click_demo_plugin_main',
         ]
     }
 )

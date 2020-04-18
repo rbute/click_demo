@@ -1,11 +1,11 @@
 import click
-from click_demo.loader import MyCLI
+from click_demo.loader import cli
 
 
-@click.command(cls=MyCLI)
+@cli.command()
 @click.option('--name', default='Rakesh')
 def click_demo_plugin_main(name):
-    click.echo('Hello from click demo plugin {name}')
+    click.echo(f'Hello from click demo plugin {name}')
 
 
 if __name__ == '__main__':
