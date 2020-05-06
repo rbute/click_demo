@@ -6,11 +6,13 @@ with open("README.md", "r") as fh:
 test_deps: [] = [
 ]
 
+
+
 setup(
     name="click_demo",
     version="0.0.1",
-    author="Rakesh Bute",
-    author_email="rakeshbute@gmail.com",
+    author="some guy",
+    author_email="someguy@gmail.com",
     description="Test setup for learning click features",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -35,10 +37,12 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'demo_cli=click_demo.loader:cli',
+            'main_cli_1=click_demo.loader_failing:cli',
+            'main_cli_2=click_demo.loader_failing_2:cli',
         ],
         'click_demo_plugins': [
-            'cdp=click_demo.plugin:click_demo_plugin_main',
+            # This entry point fails no matter what
+            'plugin=click_demo.plugin:main',
         ]
     }
 )
